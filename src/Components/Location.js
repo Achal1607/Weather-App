@@ -9,21 +9,21 @@ export default function Location(props) {
         iconAnchor: [12.5, 41],
         popupAnchor: [0, -41]
     })
-    const position = [props.lat, props.lon]
+        const position = [props.lat, props.lon]
 
     return (
         <div className='mt-lg-4 d-flex'>
-            <h1 className='col-lg-2 offset-lg-1' style={{ color: 'black', fontFamily: '"Metal Mania", cursive' }}>Location:</h1>
-            <Map className='map col-lg-6' center={position} zoom='7'>
+            {/* <h1 className='col-lg-2 offset-lg-1' style={{ color: 'black', fontFamily: '"Metal Mania", cursive' }}>Location:</h1> */}
+            <Map className='map col-9' center={position} zoom='6'>
                 <TileLayer
                     attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
                 <Marker position={position} icon={myIcon}>
                     <Popup>
-                        {props.city.toUpperCase()} is at latitude {props.lat.toFixed(2)} 
-                       <br />
-                       and longitude {props.lon.toFixed(2)}.
+                        {props.city.toUpperCase()} is at latitude {props.lat.toFixed(2)}
+                        <br />
+                        and longitude {props.lon.toFixed(2)}.
               </Popup>
                 </Marker>
             </Map>

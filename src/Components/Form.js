@@ -5,6 +5,7 @@ function Form(props) {
     const handleSubmit = async e => {
         e.preventDefault()
         const city = document.getElementById('city').value
+        document.getElementById('city').value = null
         props.Change('city', city)
         const URL = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=384866654f4fc4624e3a143658f91f0e';
         try {
@@ -56,7 +57,7 @@ function Form(props) {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <input name='city' placeholder='City' id='city' className='col-lg-6 offset-lg-3 my-md-4' />
+                <input name='city' placeholder='City' id='city' className='col-lg-6 offset-lg-3 my-md-4' autoFocus />
                 <button type='submit' name='submit' className='btn btn-danger'>Search</button>
             </form>
         </>
